@@ -1,35 +1,27 @@
 import { StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-     carContainer:{
-      width:"100%",
-      height:"100%",
-     },
-     titles:{
-      marginTop:"10%",
-      width:"100%",
-      alignItems:"center",
-     },
-     title:{
-      fontSize:40,
-      fontWeight:'bold',
-     },
-     subtitle:{
-      fontSize:16,
-      color:"#5c5e62"
-     },
-     imageBackground:{
-      height:"100%",
-      width:"100%",
-      position:'absolute'
-     },
-  
-  });
-  
+   button:{
+     height:40,
+     width:"50%",
+     backgroundColor:"black",
+     borderRadius:20,
+     alignItems:'center',
+     justifyContent:"center",
+   },
+   text:{
+     fontSize:20,
+     fontWeight:'500',
+     color:"white",
+     textTransform:'uppercase'
+   },
+   container:{
+     width:"100%",
+     paddingLeft:10,
+     paddingTop:10,
+     alignItems:'center',
+     justifyContent:"center"
+   },
+});
+
 export default styles;

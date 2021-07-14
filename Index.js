@@ -1,40 +1,24 @@
-import React from 'react';
-import { render } from 'react-dom';
-import {Text, View, ImageBackground } from 'react-native';
-import StyledButton from '../StyledButton/Index'
+import React from "react";
+import {View,Text,TouchableOpacity} from "react-native";
 import styles from "./Style";
 
-const CarItem = () => {
+const StyledButton = (props) => {
+
+    const {type, content, onPress} = props;
+
+    const backgroundColor = type === "primary" ? '#171A20CC' : '#FFFFFFA6'
+    const textColor = type === "primary" ? '#FFFFFF' : '171A20'
+    
     return(
-        <View style={styles.carContainer}>
-        
-        <ImageBackground 
-        style={styles.imageBackground}
-        source={require('../../assets/ModelS.jpeg')}
-        />
-
-        <View style={styles.titles}>
-          
-          <Text style={styles.title}>Model S</Text>
-          <Text style={styles.subtitle}>Starting at $69,420</Text>
+        <View style={styles.container}>
+            <TouchableOpacity 
+            style={[styles.button,{backgroundColor: backgroundColor}]}
+            onPress={() => onPress()}>
+               <Text style={[styles.text,{color: textColor}]}>{content}</Text> 
+            </TouchableOpacity>
         </View>
-
-        <StyledButton 
-        type="primary" 
-        content="Custom Order" 
-        onPress={() => {
-          console.log('Custom Order was Pressed')
-        }}/>
-
-        <StyledButton 
-        type="secondary" 
-        content="Existing Inventory" 
-        onPress={() => {
-          console.log('Existing Inventory was Pressed')
-        }}/>
-
-      </View>
     )
+
 }
-   
-export default CarItem;
+
+export default StyledButton;
